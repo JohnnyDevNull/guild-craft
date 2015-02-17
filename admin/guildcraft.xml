@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.2.0" method="upgrade">
+	<name>com_guildcraft</name>
+	<creationDate>Februar 2015</creationDate>
+	<author>Philipp John</author>
+	<authorEmail>info@jplace.de</authorEmail>
+	<authorUrl>http://www.jplace.de</authorUrl>
+	<copyright>Copyright Philipp John</copyright>
+	<license>License GNUv2 or later</license>
+	<version>0.0.10</version>
+	<description>COM_GUILDCRAFT_DESCRIPTION</description>
+
+	<install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update> <!-- Runs on update -->
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<!-- Site Main File Copy Section -->
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>guildcraft.php</filename>
+		<filename>controller.php</filename>
+		<folder>views</folder>
+		<folder>models</folder>
+	</files>
+
+	<languages folder="site/language">
+		<language tag="en-GB">en-GB/en-GB.com_guildcraft.ini</language>
+		<language tag="de-DE">de-DE/de-DE.com_guildcraft.ini</language>
+	</languages>
+
+	<media destination="com_guildcraft"
+		   folder="media">
+		<filename>index.html</filename>
+		<folder>images</folder>
+	</media>
+
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu img="../media/com_guildcraft/images/wow_icon-16x16.png">COM_GUILDCRAFT_MENU</menu>
+		<submenu>
+			<!--
+				Note that all & must be escaped to &amp; for the file to be valid
+				XML and be parsed by the installer
+			-->
+			<menu link="option=com_guildcraft&amp;view=dashboard"
+				  view="dasboard"
+				  alt="GuildCraft/Characters">COM_GUILDCRAFT_SUBMENU_DASHBOARD</menu>
+			<menu link="option=com_guildcraft&amp;view=grades"
+				  view="grades"
+				  alt="GuildCraft/Grades">COM_GUILDCRAFT_SUBMENU_GRADES</menu>
+			<menu link="option=com_guildcraft&amp;view=items"
+				  view="items"
+				  alt="GuildCraft/Grades">COM_GUILDCRAFT_SUBMENU_ITEMS</menu>
+		</submenu>
+		<!-- Administration Main File Copy Section -->
+		<files folder="admin">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>guildcraft.php</filename>
+			<filename>index.html</filename>
+			<folder>cache</folder>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>lib</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+
+		<languages folder="admin/language">
+			<language tag="en-GB">en-GB/en-GB.com_guildcraft.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_guildcraft.sys.ini</language>
+			<language tag="de-DE">de-DE/de-DE.com_guildcraft.ini</language>
+			<language tag="de-DE">de-DE/de-DE.com_guildcraft.sys.ini</language>
+		</languages>
+	</administration>
+
+	<updateservers>
+		<server type="extension"
+				name="Joomla! Update Component Update Site">http://update.joomla.org/core/extensions/com_joomlaupdate.xml</server>
+	</updateservers>
+</extension>

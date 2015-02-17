@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="settings" label="COM_GUILDCRAFT_SETTINGS">
+
+		<field name="guild_name"
+			   type="text"
+			   label="COM_GUILDCRAFT_SETTINGS_GUILD_NAME_LABEL"
+			   description="COM_GUILDCRAFT_SETTINGS_GUILD_NAME_DESC" />
+
+		<field name="guild_region"
+			   type="list"
+			   default="europe"
+			   label="COM_GUILDCRAFT_SETTINGS_GUILD_REGION_LABEL"
+			   description="COM_GUILDCRAFT_SETTINGS_GUILD_REGION_DESC">
+			<option value="us">USA</option>
+			<option value="europe">Europe</option>
+			<option value="korea">Korea</option>
+			<option value="taiwan">Taiwan</option>
+			<option value="china">China</option>
+		</field>
+
+		<field name="guild_realm"
+			   type="text"
+			   label="COM_GUILDCRAFT_SETTINGS_GUILD_REALM_LABEL"
+			   description="COM_GUILDCRAFT_SETTINGS_GUILD_REALM_DESC" />
+
+		<field
+			name="api_active"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			default="0"
+			label="COM_GUILDCRAFT_SETTINGS_APIACTIVE_LABEL"
+			description="COM_GUILDCRAFT_SETTINGS_APIACTIVE_DESC">
+			<option value="1">COM_GUILDCRAFT_ACTIVE_YES</option>
+			<option value="0">COM_GUILDCRAFT_ACTIVE_NO</option>
+		</field>
+
+		<field
+			name="api_locale"
+			type="groupedlist"
+			default="en_GB"
+			label="COM_GUILDCRAFT_SETTINGS_APILOCALE_LABEL"
+			description="COM_GUILDCRAFT_SETTINGS_APILOCALE_DESC">
+			<group label="USA">
+				<option value="en_US">English (United States)</option>
+				<option value="es_MX">Spanish (Mexico)</option>
+				<option value="pt_BR">Portuguese (Brazil)</option>
+			</group>
+			<group label="Europe">
+				<option value="en_GB">English (United Kingdom)</option>
+				<option value="es_ES">Spanish (Spain)</option>
+				<option value="fr_FR">French (France)</option>
+				<option value="ru_RU">Russian (Russia)</option>
+				<option value="de_DE">German (Germany)</option>
+				<option value="pt_PT">Portuguese (Portugal)</option>
+				<option value="it_IT">Italian (Italy)</option>
+			</group>
+			<group label="Korea">
+				<option value="ko_KR">Korean (Korea)</option>
+			</group>
+			<group label="Taiwan">
+				<option value="zh_TW">Chinese (Taiwan)</option>
+			</group>
+			<group label="China">
+				<option value="zh_CN">Chinese (China)</option>
+			</group>
+		</field>
+
+		<field
+			name="app_key_active"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			default="0"
+			label="COM_GUILDCRAFT_SETTINGS_APPKEYACTIVE_LABEL"
+			description="COM_GUILDCRAFT_SETTINGS_APPKEYACTIVE_DESC">
+			<option value="1">COM_GUILDCRAFT_ACTIVE_YES</option>
+			<option value="0">COM_GUILDCRAFT_ACTIVE_NO</option>
+		</field>
+
+		<field
+			name="app_key"
+			type="text"
+			label="COM_GUILDCRAFT_SETTINGS_APPKEY_LABEL"
+			description="COM_GUILDCRAFT_SETTINGS_APPKEY_DESC">
+		</field>
+
+		<field
+			name="scan_member_items"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			default="0"
+			label="COM_GUILDCRAFT_SETTINGS_SCANMEMBERITEMS_LABEL"
+			description="COM_GUILDCRAFT_SETTINGS_SCANMEMBERITEMS_DESC">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+
+	</fieldset>
+
+	<fieldset name="permissions"
+			  label="JCONFIG_PERMISSIONS_LABEL"
+			  description="JCONFIG_PERMISSIONS_DESC">
+		<field name="rules"
+			   type="rules"
+			   label="JCONFIG_PERMISSIONS_LABEL"
+			   validate="rules"
+			   filter="rules"
+			   component="com_guildcraft"
+			   section="component" />
+	</fieldset>
+</config>

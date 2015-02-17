@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset>
+        <field name="id"
+			   type="hidden" />
+        <field name="nickname"
+			   type="text"
+               label="COM_GUILDCRAFT_CHAR_FIELD_NICK_LABEL"
+               description="COM_GUILDCRAFT_CHAR_FIELD_NICK_DESC"
+               size="25"
+			   class="inputbox"
+			   default="" />
+        <field name="u_id"
+			   type="text"
+               label="COM_GUILDCRAFT_CHAR_FIELD_USER_LABEL"
+               description="COM_GUILDCRAFT_CHAR_FIELD_USER_DESC"
+               size="11"
+			   class="inputbox"
+			   default="" />
+        <field name="g_id"
+			   type="text"
+               label="COM_GUILDCRAFT_CHAR_FIELD_GRADE_LABEL"
+               description="COM_GUILDCRAFT_CHAR_FIELD_GRADE_DESC"
+               size="11"
+			   class="inputbox"
+			   default="" />
+        <field name="level"
+			   type="text"
+               label="COM_GUILDCRAFT_CHAR_FIELD_LEVEL_LABEL"
+               description="COM_GUILDCRAFT_CHAR_FIELD_LEVEL_DESC"
+               size="3"
+			   class="inputbox"
+			   default="" />
+        <field name="class"
+			   type="text"
+               label="COM_GUILDCRAFT_CHAR_FIELD_CLASS_LABEL"
+               description="COM_GUILDCRAFT_CHAR_FIELD_CLASS_DESC"
+               size="100"
+			   class="inputbox"
+			   default="" />
+		<field name="published"
+			   type="radio"
+			   class="btn-group btn-group-yesno"
+			   default="1"
+			   label="COM_GUILDCRAFT_CHAR_FIELD_PUBLISHED_LABEL"
+			   description="COM_GUILDCRAFT_CHAR_FIELD_PUBLISHED_DESC">
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+    </fieldset>
+</form>
