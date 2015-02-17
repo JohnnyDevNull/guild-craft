@@ -1,5 +1,12 @@
 <?php
- 
+ /**
+ * @package Joomla.Administrator
+ * @subpackage com_guildcraft
+ *
+ * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @license http://www.gnu.org/licenses/gpl-3.0
+ */
+
 // Den direkten Aufruf verbieten.
 defined('_JEXEC') or die;
  

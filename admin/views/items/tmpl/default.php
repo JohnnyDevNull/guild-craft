@@ -1,12 +1,11 @@
 <?php
 /**
- * @package     Joomla.Administrator
- * @subpackage  com_helloworld
+ * @package Joomla.Administrator
+ * @subpackage com_guildcraft
  *
- * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @license http://www.gnu.org/licenses/gpl-3.0
  */
- 
 // No direct access to this file
 defined('_JEXEC') or die('Restricted Access');
 

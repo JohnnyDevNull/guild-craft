@@ -4,7 +4,7 @@
  * @subpackage com_guildcraft
  *
  * @copyright Copyright (C) 2015 Philipp John All rights reserved.
- * @license GNU General Public License version 2 or later; see LICENSE.txt
+ * @license http://www.gnu.org/licenses/gpl-3.0
  */
 
 // No direct access to this file
@@ -12,8 +12,6 @@ defined('_JEXEC') or die('Restricted access');
 
 /**
  * Guild Craft Model
- *
- * @since 0.0.1
  */
 class GuildCraftModelGuildCraft extends JModelItem
 {
@@ -25,13 +23,10 @@ class GuildCraftModelGuildCraft extends JModelItem
 	/**
 	 * Method to get a table object, load it if necessary.
 	 *
-	 * @param   string  $type    The table name. Optional.
-	 * @param   string  $prefix  The class prefix. Optional.
-	 * @param   array   $config  Configuration array for model. Optional.
-	 *
-	 * @return  JTable  A JTable object
-	 *
-	 * @since   1.6
+	 * @param string $type The table name. Optional.
+	 * @param string $prefix The class prefix. Optional.
+	 * @param array $config Configuration array for model. Optional.
+	 * @return JTable A JTable object
 	 */
 	public function getTable($type = 'GuildCraft', $prefix = 'GuildCraftTable', $config = array())
 	{
@@ -39,11 +34,10 @@ class GuildCraftModelGuildCraft extends JModelItem
 	}
 
 	/**
-	 * Get the message
+	 * Get the Grades.
 	 *
-	 * @param   integer  $id  Greeting Id
-	 *
-	 * @return  string        Fetched String from Table for relevant Id
+	 * @param integer $id Greeting Id
+	 * @return string Fetched String from Table for relevant Id
 	 */
 	public function getGrades($id = 1)
 	{

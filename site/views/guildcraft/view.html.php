@@ -4,7 +4,7 @@
  * @subpackage com_guildcraft
  *
  * @copyright Copyright (C) 2015 Philipp John All rights reserved.
- * @license GNU General Public License version 2 or later; see LICENSE.txt
+ * @license http://www.gnu.org/licenses/gpl-3.0
  */
  
 // No direct access to this file
@@ -12,17 +12,14 @@ defined('_JEXEC') or die('Restricted access');
  
 /**
 * HTML View class for the Guild Craft Component
-*
-* @since 0.0.1
 */
 class GuildCraftViewGuildCraft extends JViewLegacy
 {
 	/**
-	 * Display the Hello World view
+	 * Display the Guild Craft view.
 	 *
-	 * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
-	 *
-	 * @return  void
+	 * @param string $tpl The name of the template file to parse; automatically searches through the template paths.
+	 * @return false|null
 	 */
 	public function display($tpl = null) 
 	{

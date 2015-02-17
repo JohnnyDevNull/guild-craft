@@ -6,7 +6,7 @@
 	<authorEmail>info@jplace.de</authorEmail>
 	<authorUrl>http://www.jplace.de</authorUrl>
 	<copyright>Copyright Philipp John</copyright>
-	<license>License GNUv2 or later</license>
+	<license>http://www.gnu.org/licenses/gpl-3.0</license>
 	<version>0.0.10</version>
 	<description>COM_GUILDCRAFT_DESCRIPTION</description>
 
@@ -44,6 +44,7 @@
 		   folder="media">
 		<filename>index.html</filename>
 		<folder>images</folder>
+		<folder>css</folder>
 	</media>
 
 	<administration>

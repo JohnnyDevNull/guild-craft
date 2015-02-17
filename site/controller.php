@@ -4,16 +4,14 @@
  * @subpackage com_guildcraft
  *
  * @copyright Copyright (C) 2015 Philipp John All rights reserved.
- * @license GNU General Public License version 2 or later; see LICENSE.txt
+ * @license http://www.gnu.org/licenses/gpl-3.0
  */
  
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
  
 /**
- * Guild Craft Component Controller
- *
- * @since 0.0.1
+ * Guild Craft Component Site Controller
  */
 class GuildCraftController extends JControllerLegacy
 {

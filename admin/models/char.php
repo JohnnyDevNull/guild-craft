@@ -4,7 +4,7 @@
  * @subpackage com_guildcraft
  *
  * @copyright Copyright (C) 2015 Philipp John All rights reserved.
- * @license GNU General Public License version 2 or later; see LICENSE.txt
+ * @license http://www.gnu.org/licenses/gpl-3.0
  */
 
 // Den direkten Aufruf verbieten
