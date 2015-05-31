@@ -3,14 +3,13 @@
  * @package Joomla.Administrator
  * @subpackage com_guildcraft
  *
+ * @author Philipp John <info@jplace.de>
  * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
  * @license http://www.gnu.org/licenses/gpl-3.0
  */
- 
-// No direct access to this file
-defined('_JEXEC') or die('Restricted Access');
 
-// Das Tooltip Behavior wird geladen
+defined('_JEXEC') or die('RESTRICTED ACCESS');
 JHtml::_('behavior.tooltip');
 
 ?>
@@ -23,6 +22,13 @@ JHtml::_('behavior.tooltip');
 	</div>
 	<div id="j-main-container" class="span10">
 		<table class="table table-striped table-hover">
+			<colgroup>
+				<col style="width: 30px" />
+				<col style="width: 80px" />
+				<col style="" />
+				<col style="width: 100px" />
+				<col style="width: 80px" />
+			</colgroup>
 			<thead>
 			<tr>
 				<th><?php echo JText::_('COM_GUILDCRAFT_NUM'); ?></th>
@@ -53,9 +59,7 @@ JHtml::_('behavior.tooltip');
 			<?php endif; ?>
 			</tbody>
 			<tfoot>
-				<tr>
-					<td colspan="5"><?php echo $this->pagination->getListFooter(); ?></td>
-				</tr>
+				<tr><td colspan="5"><?php echo $this->pagination->getListFooter(); ?></td></tr>
 			</tfoot>
 		</table>
 		<input type="hidden" name="task" value=""/>

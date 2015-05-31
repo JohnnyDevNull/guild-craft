@@ -6,6 +6,19 @@
  * @license http://www.gnu.org/licenses/gpl-3.0
  */
 
+DROP TABLE IF EXISTS `#__guildcraft_guild`;
+
+CREATE TABLE IF NOT EXISTS `#__guildcraft_guild` (
+	`key`		VARCHAR(50)		NOT NULL,
+	`value`		VARCHAR(100)	NOT NULL,
+	UNIQUE `key` (`key`)
+)
+	ENGINE=MyISAM
+	AUTO_INCREMENT=0
+	DEFAULT CHARSET=utf8;
+
+/* -------------------------------------------------------- */
+
 DROP TABLE IF EXISTS `#__guildcraft_characters`;
 
 CREATE TABLE IF NOT EXISTS `#__guildcraft_characters` (

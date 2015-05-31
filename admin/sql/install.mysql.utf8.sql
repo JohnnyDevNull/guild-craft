@@ -6,6 +6,21 @@
  * @license http://www.gnu.org/licenses/gpl-3.0
  */
 
+/* -------------------------------------------------------- */
+
+DROP TABLE IF EXISTS `#__guildcraft_settings`;
+
+CREATE TABLE IF NOT EXISTS `#__guildcraft_guild` (
+	`key`		VARCHAR(50)		NOT NULL,
+	`value`		TEXT			NOT NULL,
+	UNIQUE `key` (`key`)
+)
+	ENGINE=MyISAM
+	AUTO_INCREMENT=0
+	DEFAULT CHARSET=utf8;
+
+/* -------------------------------------------------------- */
+
 DROP TABLE IF EXISTS `#__guildcraft_characters`;
 
 CREATE TABLE IF NOT EXISTS `#__guildcraft_characters` (
@@ -16,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `#__guildcraft_characters` (
 	`nickname`	VARCHAR(25)		NOT NULL,
 	`level`		tinyint(4)		NOT NULL,
 	`class`		VARCHAR(100)	NOT NULL,
-	`published`	tinyint(4)		NOT NULL,
+	`published`	tinyint(4)		NOT NULL DEFAULT '0',
 	PRIMARY KEY (`id`),
 	UNIQUE `char_assignment` (`c_id`, `u_id`)
 )
@@ -60,8 +75,9 @@ CREATE TABLE IF NOT EXISTS `#__guildcraft_races` (
 	`id`		INT(11)			NOT NULL AUTO_INCREMENT,
 	`mask`		INT(11)			NOT NULL,
 	`side`		varchar(50)		NOT NULL,
-	`name`		VARCHAR(50)		NOT NULL
+	`name`		VARCHAR(50)		NOT NULL,
 	PRIMARY KEY (`id`),
+	UNIQUE `id_mask` (`id`, `mask`)
 )
 	ENGINE=MyISAM
 	AUTO_INCREMENT=0
@@ -75,9 +91,12 @@ CREATE TABLE IF NOT EXISTS `#__guildcraft_classes` (
 	`id`		INT(11)			NOT NULL AUTO_INCREMENT,
 	`mask`		INT(11)			NOT NULL,
 	`powertype`	VARCHAR(50)		NOT NULL,
-	`name`		VARCHAR(50)		NOT NULL
+	`name`		VARCHAR(50)		NOT NULL,
 	PRIMARY KEY (`id`),
+	UNIQUE `id_mask` (`id`, `mask`)
 )
 	ENGINE=MyISAM
 	AUTO_INCREMENT=0
 	DEFAULT CHARSET=utf8;
+
+/* -------------------------------------------------------- */

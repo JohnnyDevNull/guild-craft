@@ -3,25 +3,23 @@
  * @package Joomla.Administrator
  * @subpackage com_guildcraft
  *
+ * @author Philipp John <info@jplace.de>
  * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
  * @license http://www.gnu.org/licenses/gpl-3.0
  */
- 
-// No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+
+defined('_JEXEC') or die('RESTRICTED ACCESS');
  
 /**
  * Dashboard View
- *
- * @since  0.0.1
  */
 class GuildCraftViewCharacters extends JViewLegacy
 {
 	/**
 	 * Display the Dashboard view
 	 *
-	 * @param string $tpl The name of the template file to parse; automatically searches through the template paths.
-	 *
+	 * @param string $tpl
 	 * @return void
 	 */
 	function display($tpl = null)
@@ -31,8 +29,7 @@ class GuildCraftViewCharacters extends JViewLegacy
 		$this->pagination	= $this->get('Pagination');
  
 		// Check for errors.
-		if (count($errors = $this->get('Errors')))
-		{
+		if (count($errors = $this->get('Errors'))) {
 			JError::raiseError(500, implode('<br />', $errors));
  
 			return false;
@@ -51,10 +48,6 @@ class GuildCraftViewCharacters extends JViewLegacy
 
 	/**
 	 * Add the page title and toolbar.
-	 *
-	 * @return void
-	 *
-	 * @since 1.6
 	 */
 	protected function addToolBar()
 	{

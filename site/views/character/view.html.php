@@ -3,13 +3,14 @@
  * @package Joomla.Site
  * @subpackage com_guildcraft
  *
+ * @author Philipp John <info@jplace.de>
  * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
  * @license http://www.gnu.org/licenses/gpl-3.0
  */
- 
-// No direct access to this file
-defined('_JEXEC') or die('Restricted access');
- 
+
+defined('_JEXEC') or die('RESTRICTED ACCESS');
+
 /**
 * HTML View class for the Guild Craft Component
 */
@@ -24,7 +25,7 @@ class GuildCraftViewGuildCraft extends JViewLegacy
 	public function display($tpl = null) 
 	{
 		// Assign data to the view
-		$this->msg = $this->get('Msg');
+		$this->msg = $this->get('Character');
  
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))

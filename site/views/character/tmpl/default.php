@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Joomla.Administrator
+ * @package Joomla.Site
  * @subpackage com_guildcraft
  *
  * @author Philipp John <info@jplace.de>
@@ -10,17 +10,5 @@
  */
 
 defined('_JEXEC') or die('RESTRICTED ACCESS');
-jimport('joomla.application.component.controlleradmin');
-
-/**
- * Dashboard Sub-Controller
- *
- * @since 0.0.1
- */
-class GuildCraftControllerCharlist extends JControllerAdmin
-{
-	/**
-	 * @var string
-	 */
-	protected $option = 'com_guildcraft';
-}
+?>
+<h1><?php echo $this->character; ?></h1>

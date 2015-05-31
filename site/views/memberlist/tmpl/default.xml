@@ -9,10 +9,10 @@
 			>
 		<fieldset name="request">
 			<field
-					name="id"
-					type="grades"
-					label="COM_GUILDCRAFT_GUILDCRAFT_FIELD_GRADE_LABEL"
-					description="COM_GUILDCRAFT_GUILDCRAFT_FIELD_GRADE_DESC"
+					name="rank"
+					type="ranks"
+					label="COM_GUILDCRAFT_GUILDCRAFT_FIELD_RANK_LABEL"
+					description="COM_GUILDCRAFT_GUILDCRAFT_FIELD_RANK_DESC"
 					/>
 		</fieldset>
 	</fields>

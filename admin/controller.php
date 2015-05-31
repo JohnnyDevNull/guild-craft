@@ -3,22 +3,20 @@
  * @package Joomla.Administrator
  * @subpackage com_guildcraft
  *
+ * @author Philipp John <info@jplace.de>
  * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
  * @license http://www.gnu.org/licenses/gpl-3.0
  */
- 
-// No direct access to this file
-defined('_JEXEC') or die('Restricted access');
- 
-// Die Joomla! JControllerLegacy Klasse importieren
+
+defined('_JEXEC') or die('RESTRICTED ACCESS');
 jimport('joomla.application.component.controller');
 
 /**
- * General Controller of HelloWorld component
+ * General Controller of the GuildCraft component
  *
  * @package Joomla.Administrator
  * @subpackage com_guildcraft
- * @since 0.0.7
  */
 class GuildCraftController extends JControllerLegacy
 {
@@ -26,11 +24,12 @@ class GuildCraftController extends JControllerLegacy
 	 * The default view for the display method.
 	 *
 	 * @var string
-	 * @since 12.2
 	 */
 	protected $default_view = 'dashboard';
 
 	/**
+	 * Deletes a file from the cache folder.
+	 *
 	 * @return null
 	 */
 	public function removeCachedFile()
@@ -40,6 +39,24 @@ class GuildCraftController extends JControllerLegacy
 
 		$filename = JFactory::getApplication()->input->getCmd('file');
 		JFile::delete(JPATH_COMPONENT.DS.'cache'.DS.$filename);
+		parent::display();
+	}
+
+	/**
+	 * Deletes a file from the cache folder.
+	 *
+	 * @return null
+	 */
+	public function importCachedFile()
+	{
+		$filename = JFactory::getApplication()->input->getCmd('file');
+		$filepath = JPATH_COMPONENT.DS.'cache'.DS.$filename;
+
+		if(is_file($filepath)) {
+			$model = JModelLegacy::getInstance('Import', 'GuildCraft');
+			$model->import($filepath);
+		}
+
 		parent::display();
 	}
 }

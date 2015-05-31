@@ -3,14 +3,13 @@
  * @package Joomla.Administrator
  * @subpackage com_guildcraft
  *
+ * @author Philipp John <info@jplace.de>
  * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
  * @license http://www.gnu.org/licenses/gpl-3.0
  */
- 
-// No direct access to this file
-defined('_JEXEC') or die('Restricted Access');
 
-// Das Tooltip Behavior wird geladen
+defined('_JEXEC') or die('RESTRICTED ACCESS');
 JHtml::_('behavior.tooltip');
 
 ?>
@@ -54,7 +53,7 @@ JHtml::_('behavior.tooltip');
 					<td>
 						<a href="<?php echo $link; ?>"
 						   title="<?php echo JText::_('COM_GUILDCRAFT_EDIT_CHARACTER'); ?>">
-							<?php echo $row->nickname; ?>
+							<?php echo $row->name; ?>
 						</a>
 					</td>
 					<td><?php echo $row->level; ?></td>
@@ -69,7 +68,7 @@ JHtml::_('behavior.tooltip');
 							'cb'
 						);?>
 					</td>
-					<td align="center"><?php echo $row->c_id; ?></td>
+					<td align="center"><?php echo $row->char_id; ?></td>
 				</tr>
 				<?php endforeach; ?>
 			<?php endif; ?>

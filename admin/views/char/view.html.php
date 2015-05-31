@@ -1,14 +1,15 @@
 <?php
- /**
+/**
  * @package Joomla.Administrator
  * @subpackage com_guildcraft
  *
+ * @author Philipp John <info@jplace.de>
  * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
  * @license http://www.gnu.org/licenses/gpl-3.0
  */
 
-// Den direkten Aufruf verbieten.
-defined('_JEXEC') or die;
+defined('_JEXEC') or die('RESTRICTED ACCESS');
  
 /**
  * HalloWelt View.
@@ -26,11 +27,9 @@ class GuildCraftViewChar extends JViewLegacy
     protected $form;
  
     /**
-     * display method of HalloWelt view.
+     * display method of Character view.
      *
-     * @param null $tpl
-     *
-     * @return void
+     * @param string $tpl [default: null]
      */
     public function display($tpl = null)
     {

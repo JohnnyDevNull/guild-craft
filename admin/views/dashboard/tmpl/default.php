@@ -3,12 +3,13 @@
  * @package Joomla.Administrator
  * @subpackage com_guildcraft
  *
+ * @author Philipp John <info@jplace.de>
  * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
  * @license http://www.gnu.org/licenses/gpl-3.0
  */
- 
-// No direct access to this file
-defined('_JEXEC') or die('Restricted Access');
+
+defined('_JEXEC') or die('RESTRICTED ACCESS');
 
 // Das Tooltip Behavior wird geladen
 JHtml::_('behavior.tooltip');
@@ -48,7 +49,8 @@ JHtml::_('behavior.tooltip');
 				<table class="table">
 					<?php foreach($this->cachedFiles as $file) :
 						$filepath = JPATH_COMPONENT.DS.'cache'.DS.$file;
-						$actionUrl = 'index.php?option=com_guildcraft&view=dashboard&task=removeCachedFile&file='.$file;
+						$actionDeleteUrl = 'index.php?option=com_guildcraft&view=dashboard&task=removeCachedFile&file='.$file;
+						$actionImportUrl = 'index.php?option=com_guildcraft&view=dashboard&task=importCacheFile&file='.$file;
 						?>
 						<tr>
 							<td><?php echo $file ?></td>
@@ -59,8 +61,13 @@ JHtml::_('behavior.tooltip');
 							<td style="text-align: right;">
 								<a class="btn btn-micro hasTooltip"
 								   title="Chache Datei löschen"
-								   href="<?php echo $actionUrl; ?>">
+								   href="<?php echo $actionDeleteUrl; ?>">
 									<i class="icon-trash"></i>
+								</a>
+								<a class="btn btn-micro hasTooltip"
+								   title="Chache Datei löschen"
+								   href="<?php echo $actionImportUrl; ?>">
+									<i class="icon-upload"></i>
 								</a>
 							</td>
 						</tr>

@@ -3,14 +3,13 @@
  * @package Joomla.Administrator
  * @subpackage com_guildcraft
  *
+ * @author Philipp John <info@jplace.de>
  * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
  * @license http://www.gnu.org/licenses/gpl-3.0
  */
 
-// No direct access to this file
-defined('_JEXEC') or die('Restricted access');
-
-// Die Joomla! JControllerForm Klasse importieren
+defined('_JEXEC') or die('RESTRICTED ACCESS');
 jimport('joomla.application.component.controllerform');
 
 /**
@@ -20,6 +19,9 @@ jimport('joomla.application.component.controllerform');
  */
 class GuildCraftControllerGuild extends JControllerLegacy
 {
+	/**
+	 * @var string
+	 */
 	protected $default_view = 'dashboard';
 
 	/**
@@ -122,16 +124,11 @@ class GuildCraftControllerGuild extends JControllerLegacy
 		GuildCraftHelper::cacheResult($result, $call);
 	}
 
-	public function read()
-	{
-
-	}
-
 	/**
 	 * Perform a complete character reset
 	 */
 	public function reset()
 	{
-		echo 'It Works';
+		parent::display();
 	}
 }

@@ -3,65 +3,56 @@
  * @package Joomla.Site
  * @subpackage com_guildcraft
  *
+ * @author Philipp John <info@jplace.de>
  * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
  * @license http://www.gnu.org/licenses/gpl-3.0
  */
 
-// No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die('RESTRICTED ACCESS');
 
 /**
  * Guild Craft Model
  */
-class GuildCraftModelGuildCraft extends JModelItem
+class GuildCraftModelCharacter extends JModelItem
 {
 	/**
-	 * @var string message
+	 * @var GuildCraftTableCharacter[] message
 	 */
-	protected $grades;
+	protected $character;
 
 	/**
-	 * Method to get a table object, load it if necessary.
-	 *
 	 * @param string $type The table name. Optional.
 	 * @param string $prefix The class prefix. Optional.
 	 * @param array $config Configuration array for model. Optional.
 	 * @return JTable A JTable object
 	 */
-	public function getTable($type = 'GuildCraft', $prefix = 'GuildCraftTable', $config = array())
+	public function getTable($type = 'Character', $prefix = 'GuildCraftTable', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
 
 	/**
-	 * Get the Grades.
-	 *
-	 * @param integer $id Greeting Id
-	 * @return string Fetched String from Table for relevant Id
+	 * @param integer $id [optional] default: 1
+	 * @return GuildCraftTableCharacter
 	 */
 	public function getGrades($id = 1)
 	{
-		if (!is_array($this->grades))
+		if (!is_array($this->character))
 		{
-			$this->grades = array();
+			$this->character = array();
 		}
 
-		if (!isset($this->grades[$id]))
+		if (!isset($this->character[$id]))
 		{
 			// Request the selected id
 			$jinput = JFactory::getApplication()->input;
 			$id     = $jinput->get('id', 1, 'INT');
-
-			// Get a TableHelloWorld instance
 			$table = $this->getTable();
- 
-			// Load the message
 			$table->load($id);
- 
-			// Assign the message
-			$this->grades[$id] = $table->name;
+			$this->character[$id] = $table;
 		}
 
-		return $this->grades[$id];
+		return $this->character[$id];
 	}
 }

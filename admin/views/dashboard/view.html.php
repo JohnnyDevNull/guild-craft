@@ -3,17 +3,16 @@
  * @package Joomla.Administrator
  * @subpackage com_guildcraft
  *
+ * @author Philipp John <info@jplace.de>
  * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
  * @license http://www.gnu.org/licenses/gpl-3.0
  */
- 
-// No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+
+defined('_JEXEC') or die('RESTRICTED ACCESS');
  
 /**
  * Dashboard View
- *
- * @since  0.0.1
  */
 class GuildCraftViewDashboard extends JViewLegacy
 {
@@ -21,7 +20,6 @@ class GuildCraftViewDashboard extends JViewLegacy
 	 * Display the Dashboard view
 	 *
 	 * @param string $tpl The name of the template file to parse; automatically searches through the template paths.
-	 *
 	 * @return void
 	 */
 	function display($tpl = null)
@@ -45,7 +43,7 @@ class GuildCraftViewDashboard extends JViewLegacy
 		GuildCraftHelper::addSubmenu('dashboard');
 		$this->sidebar = JHtmlSidebar::render();
 
-		// Set the toolbar
+		// Set the toolbars
 		$this->addToolBar();
 
 		// Display the template
@@ -56,8 +54,6 @@ class GuildCraftViewDashboard extends JViewLegacy
 	 * Add the page title and toolbar.
 	 *
 	 * @return void
-	 *
-	 * @since 1.6
 	 */
 	protected function addToolBar()
 	{
@@ -66,7 +62,7 @@ class GuildCraftViewDashboard extends JViewLegacy
 		JToolBarHelper::custom('guild.getGuildMembers', 'download', '', 'Gildenmitglieder abrufen', false);
 		JToolBarHelper::custom('guild.getRaces', 'download', '', 'Rassen abrufen', false);
 		JToolBarHelper::custom('guild.getClasses', 'download', '', 'Klassen abrufen', false);
-		JToolBarHelper::custom('guild.read', 'loop', '', 'Daten einlesen', false);
+		JToolBarHelper::custom('import.prepare', 'loop', '', 'Daten einlesen', false);
 		JToolBarHelper::custom('guild.reset', 'cancel', '', 'Gilde zurücksetzten', false);
 		JToolBarHelper::preferences('com_guildcraft');
 	}
