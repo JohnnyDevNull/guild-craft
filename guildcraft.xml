@@ -7,7 +7,7 @@
 	<authorUrl>http://www.jplace.de</authorUrl>
 	<copyright>Copyright Philipp John</copyright>
 	<license>http://www.gnu.org/licenses/gpl-3.0</license>
-	<version>0.0.10</version>
+	<version>0.0.11</version>
 	<description>COM_GUILDCRAFT_DESCRIPTION</description>
 
 	<install> <!-- Runs on install -->
@@ -43,6 +43,7 @@
 	<media destination="com_guildcraft"
 		   folder="media">
 		<filename>index.html</filename>
+		<folder>css</folder>
 		<folder>images</folder>
 	</media>
 
@@ -55,14 +56,14 @@
 				XML and be parsed by the installer
 			-->
 			<menu link="option=com_guildcraft"
-				  view="dasboard"
+				  view="caracters"
 				  alt="GuildCraft/Characters">Characters</menu>
 			<menu link="option=com_guildcraft"
-				  view="grades"
-				  alt="GuildCraft/Grades">Mitgliederränge</menu>
+				  view="ranks"
+				  alt="GuildCraft/Ranks">Mitgliederränge</menu>
 			<menu link="option=com_guildcraft"
 				  view="items"
-				  alt="GuildCraft/Grades">Ausrüstung</menu>
+				  alt="GuildCraft/Items">Ausrüstung</menu>
 		</submenu>
 		<!-- Administration Main File Copy Section -->
 		<files folder="admin">

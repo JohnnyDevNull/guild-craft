@@ -19,5 +19,5 @@ class GuildCraftController extends JControllerLegacy
 	/**
 	 * @var string
 	 */
-	protected $default_view = 'memberlist';
+	protected $default_view = 'characters';
 }

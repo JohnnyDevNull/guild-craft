@@ -20,6 +20,8 @@ if(!defined('DS')) {
 }
 
 require_once  JPATH_COMPONENT.DS.'helpers'.DS.'guildcraft.php';
+GuildCraftHelper::import('model.list', 'GuildCraftModelList');
+JHtml::stylesheet('com_guildcraft/styles.css', array('language' => 'text/css'), true);
 
 $controller = JControllerLegacy::getInstance('GuildCraft');
 $controller->execute(JFactory::getApplication()->input->getCmd('task'));

@@ -19,12 +19,12 @@ JHtml::_('behavior.tooltip');
 	  method="post"
 	  id="adminForm"
 	  name="adminForm">
-	<div id="j-sidebar-container" class="span2">
+	<div id="j-sidebar-container">
 		<?php echo $this->sidebar; ?>
 	</div>
 	<div id="j-main-container" class="span10">
 		<div class="row-fluid">
-			<div class="span4" style="padding-right: 10px;">
+			<div class="span4">
 				<h3><?php echo JText::_('COM_GUILDCRAFT_DASHBOARD_GUILD_HEADING'); ?></h3>
 				<table class="table">
 					<tr>
@@ -33,7 +33,7 @@ JHtml::_('behavior.tooltip');
 					</tr>
 				</table>
 			</div>
-			<div class="span3" style="padding: 0px 10px;">
+			<div class="span3">
 				<h3><?php echo JText::_('COM_GUILDCRAFT_DASHBOARD_STATISTIC_HEADING'); ?></h3>
 				<table class="table">
 					<?php foreach($this->items['statistic'] as $key => $count) : ?>
@@ -44,12 +44,12 @@ JHtml::_('behavior.tooltip');
 					<?php endforeach; ?>
 				</table>
 			</div>
-			<div class="span5" style="padding-left: 10px;">
+			<div class="span5">
 				<h3><?php echo JText::_('COM_GUILDCRAFT_DASHBOARD_CACHE_HEADING'); ?></h3>
 				<table class="table">
 					<?php foreach($this->cachedFiles as $file) :
 						$filepath = JPATH_COMPONENT.DS.'cache'.DS.$file;
-						$actionDeleteUrl = 'index.php?option=com_guildcraft&view=dashboard&task=removeCachedFile&file='.$file;
+						$actionDeleteUrl = 'index.php?option=com_guildcraft&view=dashboard&task=removeCacheFile&file='.$file;
 						$actionImportUrl = 'index.php?option=com_guildcraft&view=dashboard&task=importCacheFile&file='.$file;
 						?>
 						<tr>
@@ -60,12 +60,12 @@ JHtml::_('behavior.tooltip');
 							</td>
 							<td style="text-align: right;">
 								<a class="btn btn-micro hasTooltip"
-								   title="Chache Datei löschen"
+								   title="Datei löschen"
 								   href="<?php echo $actionDeleteUrl; ?>">
 									<i class="icon-trash"></i>
 								</a>
 								<a class="btn btn-micro hasTooltip"
-								   title="Chache Datei löschen"
+								   title="Datei importieren"
 								   href="<?php echo $actionImportUrl; ?>">
 									<i class="icon-upload"></i>
 								</a>

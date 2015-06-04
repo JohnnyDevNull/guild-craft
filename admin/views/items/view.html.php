@@ -12,9 +12,12 @@
 defined('_JEXEC') or die('RESTRICTED ACCESS');
  
 /**
- * Items View
+ * GuildCraftViewItems JViewLegacy
  *
- * @since 0.0.1
+ * @author Philipp John <info@jplace.de>
+ * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
+ * @license http://www.gnu.org/licenses/gpl-3.0
  */
 class GuildCraftViewItems extends JViewLegacy
 {

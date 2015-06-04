@@ -13,10 +13,12 @@ defined('_JEXEC') or die('RESTRICTED ACCESS');
 jimport('joomla.application.component.controller');
 
 /**
- * General Controller of the GuildCraft component
+ * GuildCraftController JControllerLegacy
  *
- * @package Joomla.Administrator
- * @subpackage com_guildcraft
+ * @author Philipp John <info@jplace.de>
+ * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
+ * @license http://www.gnu.org/licenses/gpl-3.0
  */
 class GuildCraftController extends JControllerLegacy
 {
@@ -32,7 +34,7 @@ class GuildCraftController extends JControllerLegacy
 	 *
 	 * @return null
 	 */
-	public function removeCachedFile()
+	public function removeCacheFile()
 	{
 		jimport('joomla.filesystem.folder');
 		jimport('joomla.filesystem.file');
@@ -47,15 +49,26 @@ class GuildCraftController extends JControllerLegacy
 	 *
 	 * @return null
 	 */
-	public function importCachedFile()
+	public function importCacheFile()
 	{
 		$filename = JFactory::getApplication()->input->getCmd('file');
 		$filepath = JPATH_COMPONENT.DS.'cache'.DS.$filename;
 
 		if(is_file($filepath)) {
-			$model = JModelLegacy::getInstance('Import', 'GuildCraft');
+			$model = JModelLegacy::getInstance('Import', 'GuildCraftModel');
 			$model->import($filepath);
 		}
+
+		parent::display();
+	}
+
+	/**
+	 * Perform a complete character reset
+	 */
+	public function reset()
+	{
+		$model = JModelLegacy::getInstance('Reset', 'GuildCraftModel');
+		$model->reset();
 
 		parent::display();
 	}

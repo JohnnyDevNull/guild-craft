@@ -6,8 +6,8 @@
  * @license http://www.gnu.org/licenses/gpl-3.0
  */
 
-DROP TABLE IF EXISTS `#__guildcraft_settings`;
+DROP TABLE IF EXISTS `#__guildcraft_data`;
 DROP TABLE IF EXISTS `#__guildcraft_characters`;
-DROP TABLE IF EXISTS `#__guildcraft_grades`;
+DROP TABLE IF EXISTS `#__guildcraft_ranks`;
 DROP TABLE IF EXISTS `#__guildcraft_races`;
 DROP TABLE IF EXISTS `#__guildcraft_classes`;

@@ -29,7 +29,6 @@ JHtml::_('behavior.tooltip');
 				<col style="width: 100px" />
 				<col style="width: 100px" />
 				<col style="width: 100px" />
-				<col style="width: 80px" />
 			</colgroup>
 			<thead>
 				<tr>
@@ -38,37 +37,29 @@ JHtml::_('behavior.tooltip');
 					<th><?php echo JText::_('COM_GUILDCRAFT_CHARACTERS_NAME') ;?></th>
 					<th><?php echo JText::_('COM_GUILDCRAFT_CHARACTERS_LEVEL') ;?></th>
 					<th><?php echo JText::_('COM_GUILDCRAFT_CHARACTERS_CLASS') ;?></th>
-					<th><?php echo JText::_('COM_GUILDCRAFT_PUBLISHED'); ?></th>
-					<th><?php echo JText::_('COM_GUILDCRAFT_ID'); ?></th>
+					<th class="text-center"><?php echo JText::_('COM_GUILDCRAFT_PUBLISHED'); ?></th>
 				</tr>
 			</thead>
 			<tbody>
 			<?php if (!empty($this->items)) : ?>
-				<?php foreach ($this->items as $i => $row) :
-					$link = JRoute::_('index.php?option=com_guildcraft&task=char.edit&id=' . $row->id);
+				<?php foreach ($this->items as $i => $character) :
+					//var_dump($this->classes);
+					$link = JRoute::_('index.php?option=com_guildcraft&task=char.edit&id=' . $character->id);
 				?>
 				<tr>
-					<td><?php echo JHtml::_('grid.id', $i, $row->id); ?></td>
+					<td><?php echo JHtml::_('grid.id', $i, $character->id); ?></td>
 					<td><?php echo $this->pagination->getRowOffset($i); ?></td>
 					<td>
 						<a href="<?php echo $link; ?>"
 						   title="<?php echo JText::_('COM_GUILDCRAFT_EDIT_CHARACTER'); ?>">
-							<?php echo $row->name; ?>
+							<?php echo $character->name; ?>
 						</a>
 					</td>
-					<td><?php echo $row->level; ?></td>
-					<td><?php echo $row->class; ?></td>
-					<td align="center">
-						<?php echo JHtml::_(
-							'jgrid.published',
-							$row->published,
-							$i,
-							'characters.',
-							true,
-							'cb'
-						);?>
+					<td><?php echo $character->level; ?></td>
+					<td><?php echo $this->classes[$character->class_id]->name; ?></td>
+					<td class="text-center">
+						<?php echo JHtml::_('jgrid.published', $character->published, $i, 'characters.', true, 'cb' ); ?>
 					</td>
-					<td align="center"><?php echo $row->char_id; ?></td>
 				</tr>
 				<?php endforeach; ?>
 			<?php endif; ?>

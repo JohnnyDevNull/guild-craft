@@ -14,27 +14,30 @@ defined('_JEXEC') or die('RESTRICTED ACCESS');
 ?>
 <table class="table gc-memberlist">
 	<colgroup>
-		<col style="width: 40px" />
-		<col style="width: 80px" />
+		<col style="width: 60px" />
 		<col style="" />
-		<col style="width: 80px" />
+		<col style="" />
+		<col style="" />
+		<col style="" />
 	</colgroup>
 	<thead>
 		<tr>
 			<th><?php echo JText::_('COM_GUILDCRAFT_NUM'); ?></th>
-			<th><?php echo JText::_('COM_GUILDCRAFT_CHARACTERS_LEVEL') ;?></th>
 			<th><?php echo JText::_('COM_GUILDCRAFT_CHARACTERS_NAME') ;?></th>
+			<th><?php echo JText::_('COM_GUILDCRAFT_CHARACTERS_RANK') ;?></th>
+			<th><?php echo JText::_('COM_GUILDCRAFT_CHARACTERS_LEVEL') ;?></th>
 			<th><?php echo JText::_('COM_GUILDCRAFT_CHARACTERS_CLASS') ;?></th>
 		</tr>
 	</thead>
 	<tbody>
 	<?php if (!empty($this->items)) : ?>
-		<?php foreach ($this->items as $i => $item) : ?>
+		<?php foreach ($this->items as $i => $character) : ?>
 			<tr>
 				<td><?php echo $i + 1; ?></td>
-				<td><?php echo $item->level ?></td>
-				<td><?php echo $item->name ?></td>
-				<td><?php echo $item->class ?></td>
+				<td><?php echo $character->name ?></td>
+				<td><?php echo $this->ranks[$character->rank_id]->name ?></td>
+				<td><?php echo $character->level ?></td>
+				<td><?php echo $this->classes[$character->class_id]->name ?></td>
 			</tr>
 		<?php endforeach; ?>
 	<?php endif; ?>

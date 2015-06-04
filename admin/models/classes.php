@@ -10,10 +10,9 @@
  */
 
 defined('_JEXEC') or die('RESTRICTED ACCESS');
-jimport('joomla.application.component.modellist');
 
 /**
- * GuildCraftModelCharacters JModelList
+ * GuildCraftModelRanks GuildCraftModelList
  *
  * @package Joomla.Administrator
  * @subpackage com_guildcraft
@@ -23,22 +22,8 @@ jimport('joomla.application.component.modellist');
  * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
  * @license http://www.gnu.org/licenses/gpl-3.0
  */
-class GuildCraftModelCharacters extends JModelList
+class GuildCraftModelClasses extends GuildCraftModelList
 {
-	/**
-	 * @param string[] $config
-	 */
-    public function __construct($config = array())
-    {
-        if (empty($config['filter_fields'])) {
-            $config['filter_fields'] = array(
-                'id', 'c.id',
-	        );
-        }
-
-        parent::__construct($config);
-    }
-
 	/**
 	 * Method to build an SQL query to load the list data.
 	 *
@@ -52,8 +37,29 @@ class GuildCraftModelCharacters extends JModelList
  
 		// Create the base select statement.
 		$query->select('*')
-			  ->from($db->quoteName('#__guildcraft_characters'));
+			  ->from($db->quoteName('#__guildcraft_classes'));
  
 		return $query;
+	}
+
+	/**
+	 * @param string $query
+	 * @param int $limitstart
+	 * @param int $limit
+	 * @return stdClass|array
+	 */
+	protected function _getList($query, $limitstart = 0, $limit = 0)
+	{
+		$this->_db->setQuery($query, $limitstart, $limit);
+
+		$result = null;
+
+		if ($this->_resultType == 'object') {
+			$result = $this->_db->loadObjectList($this->_key);
+		} else if ($this->_resultType == 'assoc') {
+			$result = $this->_db->loadAssocList($this->_key);
+		}
+
+		return $result;
 	}
 }

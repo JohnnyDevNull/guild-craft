@@ -14,8 +14,28 @@ defined('_JEXEC') or die('RESTRICTED ACCESS');
 /**
  * HTML View class for the Guild Craft Component
  */
-class GuildCraftViewMemberlist extends JViewLegacy
+class GuildCraftViewCharacters extends JViewLegacy
 {
+	/**
+	 * @var stdClass[]
+	 */
+	public $items;
+
+	/**
+	 * @var stdClass[]
+	 */
+	public $races;
+
+	/**
+	 * @var stdClass[]
+	 */
+	public $classes;
+
+	/**
+	 * @var stdClass[]
+	 */
+	public $ranks;
+
 	/**
 	 * Display the Guild Craft view.
 	 *
@@ -24,18 +44,24 @@ class GuildCraftViewMemberlist extends JViewLegacy
 	 */
 	public function display($tpl = null) 
 	{
-		// Assign data to the view
-		$this->items = $this->get('Items');
-		$this->pagination = $this->get('Pagination');
+		$this->items		= $this->get('Items');
+		$this->pagination	= $this->get('Pagination');
+ 
+		$model = JModelLegacy::getInstance('Races', 'GuildCraftModel');
+		$this->races = $model->getItems();
 
-		// Check for errors.
+		$model = JModelLegacy::getInstance('Classes', 'GuildCraftModel');
+		$this->classes = $model->getItems();
+
+		$model = JModelLegacy::getInstance('Ranks', 'GuildCraftModel');
+		$this->ranks = $model->getItems();
+
 		if (count($errors = $this->get('Errors')))
 		{
 			JLog::add(implode('<br />', $errors), JLog::WARNING, 'jerror');
 			return false;
 		}
 
-		// Display the view
 		parent::display($tpl);
 	}
 }

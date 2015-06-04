@@ -13,7 +13,7 @@ defined('_JEXEC') or die('RESTRICTED ACCESS');
 jimport('joomla.application.component.modellist');
 
 /**
- * GuildCraftModelCharacters JModelList
+ * GuildCraftModelReset JModelLegacy
  *
  * @package Joomla.Administrator
  * @subpackage com_guildcraft
@@ -23,37 +23,34 @@ jimport('joomla.application.component.modellist');
  * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
  * @license http://www.gnu.org/licenses/gpl-3.0
  */
-class GuildCraftModelCharacters extends JModelList
+class GuildCraftModelReset extends JModelLegacy
 {
 	/**
-	 * @param string[] $config
-	 */
-    public function __construct($config = array())
-    {
-        if (empty($config['filter_fields'])) {
-            $config['filter_fields'] = array(
-                'id', 'c.id',
-	        );
-        }
-
-        parent::__construct($config);
-    }
-
-	/**
-	 * Method to build an SQL query to load the list data.
+	 * Starts the import.
 	 *
-	 * @return string An SQL query
+	 * @return bool
 	 */
-	protected function getListQuery()
+	public function reset()
 	{
-		// Initialize variables.
-		$db    = JFactory::getDbo();
-		$query = $db->getQuery(true);
- 
-		// Create the base select statement.
-		$query->select('*')
-			  ->from($db->quoteName('#__guildcraft_characters'));
- 
-		return $query;
+		$tables = array (
+			'characters',
+			'classes',
+			'data',
+			'races',
+		);
+
+		$affectedRows = 0;
+		$query = $this->_db->getQuery();
+
+		foreach($tables as $table) {
+			$query->clear()->delete('#__guildcraft_'.$table);
+			$this->_db->setQuery($query);
+			$this->_db->execute();
+			$affectedRows += $this->_db->getAffectedRows();
+		}
+
+		JFactory::getApplication()->enqueueMessage (
+			$affectedRows.' Einträge wurden erfolgreich gelöscht.'
+		);
 	}
 }

@@ -12,7 +12,12 @@
 defined('_JEXEC') or die('RESTRICTED ACCESS');
  
 /**
- * Dashboard View
+ * GuildCraftViewDashboard JViewLegacy
+ *
+ * @author Philipp John <info@jplace.de>
+ * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
+ * @license http://www.gnu.org/licenses/gpl-3.0
  */
 class GuildCraftViewDashboard extends JViewLegacy
 {
@@ -63,7 +68,7 @@ class GuildCraftViewDashboard extends JViewLegacy
 		JToolBarHelper::custom('guild.getRaces', 'download', '', 'Rassen abrufen', false);
 		JToolBarHelper::custom('guild.getClasses', 'download', '', 'Klassen abrufen', false);
 		JToolBarHelper::custom('import.prepare', 'loop', '', 'Daten einlesen', false);
-		JToolBarHelper::custom('guild.reset', 'cancel', '', 'Gilde zurücksetzten', false);
+		JToolBarHelper::custom('reset', 'cancel', '', 'Gilde zurücksetzten', false);
 		JToolBarHelper::preferences('com_guildcraft');
 	}
 }

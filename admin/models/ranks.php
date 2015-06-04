@@ -10,19 +10,24 @@
  */
 
 defined('_JEXEC') or die('RESTRICTED ACCESS');
-jimport('joomla.application.component.modellist');
 
 /**
- * GuildCraftList Model
+ * GuildCraftModelRanks GuildCraftModelList
  *
- * @since  0.0.1
+ * @package Joomla.Administrator
+ * @subpackage com_guildcraft
+ *
+ * @author Philipp John <info@jplace.de>
+ * @copyright Copyright (C) 2015 Philipp John All rights reserved.
+ * @link https://github.com/JohnnyDevNull/guild-craft The GitHub project page
+ * @license http://www.gnu.org/licenses/gpl-3.0
  */
-class GuildCraftModelRanks extends JModelList
+class GuildCraftModelRanks extends GuildCraftModelList
 {
 	/**
 	 * @var string
 	 */
-	protected $resultType = 'object';
+	protected $_key = 'rank';
 
 	/**
 	 * Method to build an SQL query to load the list data.
@@ -54,23 +59,12 @@ class GuildCraftModelRanks extends JModelList
 
 		$result = null;
 
-		if ($this->resultType == 'object') {
-			$result = $this->_db->loadObjectList();
-		} else if ($this->resultType == 'assoc') {
-			$result = $this->_db->loadAssocList();
+		if ($this->_resultType == 'object') {
+			$result = $this->_db->loadObjectList($this->_key);
+		} else if ($this->_resultType == 'assoc') {
+			$result = $this->_db->loadAssocList($this->_key);
 		}
 
 		return $result;
-	}
-
-	/**
-	 * @param string $type array('assoc', 'object')
-	 */
-	public function setResultType($type)
-	{
-		if(in_array($type, array('assoc', 'object')))
-		{
-			$this->_resultType = $type;
-		}
 	}
 }

@@ -13,7 +13,7 @@ defined('_JEXEC') or die('RESTRICTED ACCESS');
 JFormHelper::loadFieldClass('list');
 
 /**
- * GuildCraft Form Field class for the GuildCraft component
+ * JFormFieldCharacters JFormFieldList
  *
  * @since 0.0.1
  */
@@ -38,14 +38,14 @@ class JFormFieldCharacters extends JFormFieldList
 		$query->select('id,name');
 		$query->from('#__guildcraft_characters');
 		$db->setQuery((string) $query);
-		$messages = $db->loadObjectList();
+		$characters = $db->loadObjectList();
 		$options  = array();
  
-		if ($messages)
+		if ($characters)
 		{
-			foreach ($messages as $message)
+			foreach ($characters as $character)
 			{
-				$options[] = JHtml::_('select.option', $message->id, $message->nickname);
+				$options[] = JHtml::_('select.option', $character->id, $character->name);
 			}
 		}
  
