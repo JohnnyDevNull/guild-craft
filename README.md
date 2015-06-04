@@ -37,7 +37,10 @@ The component uses the https://github.com/JohnnyDevNull/jp-wow-api
 ** by achievement points
 ** by reputation
 ** by dkp
-* Single caracter display modul
-** newest member
-** highest dkp
-** random
+
+## Single caracter display modul
+
+* newest member
+* highest dkp
+* random
+* specific
