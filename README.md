@@ -20,7 +20,7 @@ Featureliste
      2. Rarity colored
      3. Stats
      4. Item tooltips in in Blizzard style
-  3. Raid-Scheduler
+  3. Raid-Scheduler **(exposed)**
      1. Raid date list
          1. participation confirmation for registered members
      2. Raid points (DKP) list
